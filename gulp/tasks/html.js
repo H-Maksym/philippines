@@ -3,6 +3,8 @@ import fileInclude from 'gulp-file-include';
 import webHtmlNoSVG from 'gulp-webp-html-nosvg';
 //INFO non cashing in browser
 import versionNumber from 'gulp-version-number';
+//INFO minification html
+import htmlmin from 'gulp-htmlmin';
 
 //INFO collect parts of html into one file.
 export const html = () => {
@@ -30,6 +32,12 @@ export const html = () => {
         output: {
           file: 'gulp/version.json',
         },
+      })
+    )
+    .pipe(
+      htmlmin({
+        //TODO add delete comments
+        collapseWhitespace: true,
       })
     )
     .pipe(app.gulp.dest(app.path.build.html))

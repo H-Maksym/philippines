@@ -1,5 +1,6 @@
 import webpack from 'webpack-stream';
-export const js = () => {
+
+export const js = async () => {
   app.gulp
     .src(app.path.src.js, { sourcemaps: true })
     .pipe(

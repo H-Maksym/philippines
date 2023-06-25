@@ -13,7 +13,8 @@ import { html } from './gulp/tasks/html.js';
 import { server } from './gulp/tasks/server.js';
 import { scss } from './gulp/tasks/scss.js';
 import { js } from './gulp/tasks/js.js';
-
+import { assets } from './gulp/tasks/assets.js';
+import { otfToTtf, ttfToWoff, fontsStyle } from './gulp/tasks/fonts.js';
 //INFO transfer the value to the global variable
 global.app = {
   gulp,
@@ -27,10 +28,17 @@ const watcher = () => {
   gulp.watch(path.watch.html, html);
   gulp.watch(path.watch.scss, scss);
   gulp.watch(path.watch.js, js);
+  gulp.watch(path.watch.assets, assets);
 };
 
+//INFO work with fonts
+const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle);
+
 //INFO main task
-const mainTasks = gulp.parallel(copy, html, scss, js);
+const mainTasks = gulp.series(
+  fonts,
+  gulp.parallel(copy, html, scss, js, assets)
+);
 
 //INFO construction of task performance scenarios.
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
