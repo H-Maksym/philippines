@@ -8,6 +8,8 @@ import notify from 'gulp-notify';
 import browserSync from 'browser-sync';
 //INFO checking update
 import newer from 'gulp-newer';
+//INFO checked condition for node.mode
+import ifPlugin from 'gulp-if';
 
 export const plugins = {
   replace,
@@ -15,4 +17,5 @@ export const plugins = {
   notify,
   browserSync,
   newer,
+  if: ifPlugin,
 };

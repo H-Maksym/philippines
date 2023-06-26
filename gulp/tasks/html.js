@@ -20,19 +20,22 @@ export const html = () => {
     )
     .pipe(fileInclude('@@'))
     .pipe(app.plugins.replace(/@assets\//g, 'assets/'))
-    .pipe(webHtmlNoSVG())
+    .pipe(app.plugins.if(app.isBuild, webHtmlNoSVG()))
     .pipe(
-      versionNumber({
-        value: '%DT%',
-        append: {
-          key: '_v',
-          cover: '0',
-          to: ['css', 'js'],
-        },
-        output: {
-          file: 'gulp/version.json',
-        },
-      })
+      app.plugins.if(
+        app.isBuild,
+        versionNumber({
+          value: '%DT%',
+          append: {
+            key: '_v',
+            cover: '0',
+            to: ['css', 'js'],
+          },
+          output: {
+            file: 'gulp/version.json',
+          },
+        })
+      )
     )
     .pipe(
       htmlmin({
