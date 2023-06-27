@@ -52,6 +52,10 @@
     @apply border border-[#C3C3C3] w-full rounded-[8px] outline-none;
   }
 
+  .link-address {
+    @apply inline-block w-full;
+  }
+
   .custom-btn {
     @apply flex items-center justify-center w-full py-[16px] text-[20px] leading-[24px] font-bold  
     rounded-[16px] border border-[--btn-primary-border-color] duration-[--duration] transition-colors 
