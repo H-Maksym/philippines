@@ -41,7 +41,7 @@
   }
 
   .social-link {
-    @apply flex items-center justify-center w-[39px] h-[39px] rounded-full hover:scale-50 duration-[--duration] transition-colors;
+    @apply flex items-center justify-center w-[39px] h-[39px] rounded-full hover:scale-[1.1] duration-[--duration] transition-colors;
   }
 
   .social-icon {
