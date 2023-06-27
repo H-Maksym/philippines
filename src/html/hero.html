@@ -1,4 +1,6 @@
-<div class="relative z-10 rounded-b-[40px] shadow-[1px_1px_34px_0px_#bcbcbc75]">
+<div
+  class="relative z-10 rounded-b-[40px] md:rounded-b-[80px] shadow-[1px_1px_34px_0px_#bcbcbc75]"
+>
   <section class="container pb-[40px]">
     <div>
       <div>
@@ -47,12 +49,18 @@
         />
       </div>
     </div>
-
-    <button class="custom-btn mb-[20px]" type="submit">Apply now</button>
-    <p class="text-[12px] leading-[1.33] mb-[24px]">
-      Fill out the form below, and we will give and freeze a personal discount
-      with personal consultation
-    </p>
+    <div class="md:flex gap-[32px]">
+      <button class="custom-btn mb-[20px]" type="submit">
+        <span class="md:hidden">Apply now</span
+        ><span class="hidden md:inline-block">Book now</span>
+      </button>
+      <p
+        class="text-[12px] leading-[1.33] mb-[24px] md:max-w-[310px] lg:max-w-[416px]"
+      >
+        Fill out the form below, and we will give and freeze a personal discount
+        with personal consultation
+      </p>
+    </div>
     <form action="" class="card-set [--card-gap:20px] [--card-item:1]">
       <div class="card-set-item">
         <input

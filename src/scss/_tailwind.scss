@@ -25,7 +25,7 @@
 
 @layer components {
   .list-header {
-    @apply text-2xl leading-[1.4] font-bold;
+    @apply text-2xl leading-[1.4] font-bold md:text-3xl md:leading-[1.33] lg:text-4xl lg:leading-[1.125];
   }
 
   .list-item-custom {
@@ -33,11 +33,11 @@
   }
 
   .list-item-style {
-    @apply bg-[#d062d1] mt-[4px] mr-[10px] w-[14px] h-[14px] shrink-0 items-center justify-center rounded-full;
+    @apply bg-[#d062d1] mt-[4px] md:mt-[6px] lg:mt-[6px] mr-[10px]  w-[14px] h-[14px]  md:w-[22px] md:h-[22px] lg:w-[26px] lg:h-[26px] shrink-0 items-center justify-center rounded-full;
   }
 
   .custom-p {
-    @apply text-lg leading-[1.5] relative;
+    @apply text-lg leading-[1.5] relative md:text-xl md:leading-[1.55];
   }
 
   .social-link {
@@ -57,7 +57,7 @@
   }
 
   .custom-btn {
-    @apply flex items-center justify-center w-full py-[16px] text-[20px] leading-[24px] font-bold  
+    @apply flex items-center md:max-w-[202px] justify-center w-full py-[16px] text-[20px] leading-[24px] font-bold  
     rounded-[16px] border border-[--btn-primary-border-color] duration-[--duration] transition-colors 
     text-[--btn-primary-text-color] bg-[--btn-primary-bg-color] 
     hover:bg-[--btn-primary-hover-bg-color] hover:text-[--btn-primary-hover-text-color] 
