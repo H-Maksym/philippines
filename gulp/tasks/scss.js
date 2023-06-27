@@ -11,6 +11,12 @@ import webpCSS from 'gulp-webpcss';
 import autoprefixer from 'gulp-autoprefixer';
 //INFO group media queries
 import groupCSSMediaQueries from 'gulp-group-css-media-queries';
+//INFO compress styles;
+// import cssnano from 'cssnano';
+//INFO tailwind
+import postcss from 'gulp-postcss';
+import tailwindcss from 'tailwindcss';
+import options from '../../config.js'; //paths and other options from config.js
 
 const sass = gulpSass(dartSass);
 
@@ -32,6 +38,7 @@ export const scss = () => {
           outputStyle: 'expanded',
         })
       )
+      .pipe(postcss([tailwindcss(options.tailwind.tailwindjs)]))
       .pipe(app.plugins.if(app.isBuild, groupCSSMediaQueries()))
       .pipe(
         app.plugins.if(

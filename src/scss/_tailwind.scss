@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: var(--font-family);
+  }
+  body {
+    @apply flex flex-col text-[--text-color] font-medium;
+  }
+
+  .card-set {
+    @apply flex flex-wrap gap-[var(--card-gap)];
+  }
+
+  .card-set-item {
+    @apply basis-[calc(calc((100%-((var(--card-item)-1)*var(--card-gap)))/var(--card-item)))];
+  }
+
+  .visually-hidden {
+    @apply absolute w-[1px] h-[1px] -m-[1px] border-0 p-0 whitespace-nowrap overflow-hidden;
+  }
+}
+
+@layer components {
+  .list-header {
+    @apply text-2xl leading-[1.4] font-bold;
+  }
+
+  .list-item-custom {
+    @apply flex;
+  }
+
+  .list-item-style {
+    @apply bg-[#d062d1] mt-[4px] mr-[10px] w-[14px] h-[14px] shrink-0 items-center justify-center rounded-full;
+  }
+
+  .custom-p {
+    @apply text-lg leading-[1.5] relative;
+  }
+
+  .social-link {
+    @apply flex items-center justify-center w-[39px] h-[39px] rounded-full hover:scale-50 duration-[--duration] transition-colors;
+  }
+
+  .social-icon {
+    @apply w-[39px] h-[39px] fill-current;
+  }
+
+  .form-input {
+    @apply border border-[#C3C3C3] w-full rounded-[8px] outline-none;
+  }
+
+  .custom-btn {
+    @apply flex items-center justify-center w-full py-[16px] text-[20px] leading-[24px] font-bold  
+    rounded-[16px] border border-[--btn-primary-border-color] duration-[--duration] transition-colors 
+    text-[--btn-primary-text-color] bg-[--btn-primary-bg-color] 
+    hover:bg-[--btn-primary-hover-bg-color] hover:text-[--btn-primary-hover-text-color] 
+    focus:bg-[--btn-primary-hover-bg-color] focus:text-[--btn-primary-hover-text-color];
+  }
+}

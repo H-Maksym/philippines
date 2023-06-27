@@ -3,8 +3,11 @@
   @@include("html/head.html",{ "title":"GOIT Philippines" })
   <body>
     @@include('html/header.html',{})
-    <img src="@assets/support.png" />
-    @@include('html/main.html',{}) @@include('html/footer.html',{})
+    <main>
+      @@include('html/hero.html',{}) @@include('html/feature.html',{})
+      @@include('html/form.html',{})
+    </main>
+    @@include('html/footer.html',{})
     <script src="js/app.min.js"></script>
   </body>
 </html>

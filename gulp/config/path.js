@@ -28,7 +28,7 @@ export const path = {
   },
   watch: {
     js: `${srcFolder}/js/**/*.js`,
-    scss: `${srcFolder}/scss/**/*.scss`,
+    scss: `${srcFolder}/**/*.{html,scss}`,
     html: `${srcFolder}/**/*.html`,
     assets: `${srcFolder}/assets/**/*.{jpj,jpeg,png,gif,webp,svg,ico}`,
     files: `${srcFolder}/files/**/*.*`,
