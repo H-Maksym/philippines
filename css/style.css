@@ -745,6 +745,11 @@ body {
   outline-offset: 2px;
 }
 
+.link-address {
+  display: inline-block;
+  width: 100%;
+}
+
 .custom-btn {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -839,6 +844,10 @@ body {
   margin-right: 10px;
 }
 
+.mt-\[16px\] {
+  margin-top: 16px;
+}
+
 .mt-\[20px\] {
   margin-top: 20px;
 }
@@ -849,6 +858,10 @@ body {
 
 .block {
   display: block;
+}
+
+.inline-block {
+  display: inline-block;
 }
 
 .flex {
@@ -877,6 +890,10 @@ body {
   height: auto;
 }
 
+.w-\[127px\] {
+  width: 127px;
+}
+
 .w-\[14px\] {
   width: 14px;
 }
@@ -887,6 +904,10 @@ body {
 
 .w-\[39px\] {
   width: 39px;
+}
+
+.w-\[full\] {
+  width: full;
 }
 
 .w-full {
@@ -982,6 +1003,11 @@ body {
   border-color: var(--btn-primary-border-color);
 }
 
+.bg-\[\#010101\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(1 1 1 / var(--tw-bg-opacity));
+}
+
 .bg-\[\#3D6DE6\] {
   --tw-bg-opacity: 1;
   background-color: rgb(61 109 230 / var(--tw-bg-opacity));
@@ -1023,6 +1049,11 @@ body {
 .px-\[12px\] {
   padding-left: 12px;
   padding-right: 12px;
+}
+
+.px-\[24px\] {
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .py-\[14px\] {
@@ -1073,6 +1104,10 @@ body {
   font-size: 32px;
 }
 
+.text-\[10px\] {
+  font-size: 10px;
+}
+
 .text-\[12px\] {
   font-size: 12px;
 }
@@ -1091,6 +1126,14 @@ body {
 
 .font-bold {
   font-weight: 700;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.not-italic {
+  font-style: normal;
 }
 
 .leading-\[1\.125\] {
@@ -1113,6 +1156,15 @@ body {
   line-height: 24px;
 }
 
+.leading-\[2\] {
+  line-height: 2;
+}
+
+.text-\[\#ffffff\] {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .text-\[--btn-primary-text-color\] {
   color: var(--btn-primary-text-color);
 }
@@ -1123,6 +1175,14 @@ body {
 
 .text-\[md\] {
   color: md;
+}
+
+.underline {
+  text-decoration-line: underline;
+}
+
+.opacity-\[0\.3\] {
+  opacity: 0.3;
 }
 
 .shadow-\[1px_1px_34px_0px_\#bcbcbc75\] {
@@ -1156,6 +1216,10 @@ body {
 
 .\[--card-gap\:20px\] {
   --card-gap: 20px;
+}
+
+.\[--card-item\:1\] {
+  --card-item: 1;
 }
 
 .marker\:text-\[32px\] *::marker {
