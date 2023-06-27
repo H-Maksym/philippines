@@ -1,57 +1,74 @@
-<div>
-  <section class="container py-[40px]">
+<div class="md:relative">
+  <section class="container py-[40px] md:py-[60px] lg:py-[80px] lg:px-[65px]">
     <h2 class="visually-hidden">Feature GOIT Philippines</h2>
-    <p class="text-3xl leading-[1.33] font-bold mb-[24px]">What you’ll get:</p>
-    <ul class="card-set [--card-gap:20px] mb-[24px]">
-      <li class="flex card-set-item">
-        <span class="list-item-style"> </span>
-        <div>
-          <h3 class="list-header mb-[8px]">Private chat with experts</h3>
-          <p class="custom-p">
-            Get access to a private chat with experienced web developers who
-            will help you throughout the learning process and answer your
-            questions
-          </p>
-        </div>
-      </li>
-      <li class="flex card-set-item">
-        <span class="list-item-style"> </span>
-        <div>
-          <h3 class="list-header mb-[8px]">Homework and feedback</h3>
-          <p class="custom-p">
-            Complete practical assignments and receive constructive feedback
-            from our instructors to improve your skills
-          </p>
-        </div>
-      </li>
-      <li class="flex card-set-item">
-        <span class="list-item-style"> </span>
-        <div>
-          <h3 class="list-header mb-[8px]">Separate Q&A session</h3>
-          <p class="custom-p">
-            Join weekly online Q&A sessions where you can ask questions to the
-            instructors and discuss them with other students
-          </p>
-        </div>
-      </li>
-      <li class="flex card-set-item">
-        <span class="list-item-style"> </span>
-        <div>
-          <h3 class="list-header mb-[8px]">
-            Participation in a case lesson (online analysis)
-          </h3>
-          <p class="custom-p">
-            Apply the knowledge you've gained in practice by analyzing a real
-            project in a case lesson under the guidance of an experienced UX/UI
-            Designer
-          </p>
-        </div>
-      </li>
-    </ul>
-    <img
-      class="block mx-auto w-full h-auto"
-      src="@assets/feature/feature.png"
-      alt="box of confetti"
-    />
+    <div class="lg:flex gap-[43px] items-center">
+      <div class="md:max-w-[436px] lg:max-w-full">
+        <p
+          class="text-3xl leading-[1.33] font-bold mb-[24px] md:text-4xl md:leading-[1.125] lg:text-5xl lg:leading-[1]"
+        >
+          What you’ll get:
+        </p>
+        <ul class="card-set [--card-gap:20px] mb-[24px]">
+          <li class="flex card-set-item">
+            <span class="list-item-style"> </span>
+            <div>
+              <h3 class="list-header mb-[8px]">Private chat with experts</h3>
+              <p class="custom-p">
+                Get access to a private chat with experienced web developers who
+                will help you throughout the learning process and answer your
+                questions
+              </p>
+            </div>
+          </li>
+          <li class="flex card-set-item">
+            <span class="list-item-style"> </span>
+            <div>
+              <h3 class="list-header mb-[8px]">Homework and feedback</h3>
+              <p class="custom-p">
+                Complete practical assignments and receive constructive feedback
+                from our instructors to improve your skills
+              </p>
+            </div>
+          </li>
+          <li class="flex card-set-item">
+            <span class="list-item-style"> </span>
+            <div>
+              <h3 class="list-header mb-[8px]">Separate Q&A session</h3>
+              <p class="custom-p">
+                Join weekly online Q&A sessions where you can ask questions to
+                the instructors and discuss them with other students
+              </p>
+            </div>
+          </li>
+          <li class="flex card-set-item">
+            <span class="list-item-style"> </span>
+            <div>
+              <h3 class="list-header mb-[8px]">
+                Participation in a case lesson (online analysis)
+              </h3>
+              <p class="custom-p">
+                Apply the knowledge you've gained in practice by analyzing a
+                real project in a case lesson under the guidance
+                of an experienced UX/UI Designer
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="md:absolute md:top-[47%] left-[52%] md:translate-y-[-50%] lg:static lg:translate-y-0"
+      >
+        <img
+          class="block mx-auto w-full h-full max-w-[275px] md:hidden lg:block lg:min-w-[672px] lg:h-[522px]"
+          src="@assets/icons/feature/feature.svg"
+          alt="box of confetti"
+        />
+        <img
+          class="sm:hidden md:block w-full h-full lg:hidden"
+          src="@assets/icons/feature/feature2.svg"
+          alt="box of confetti"
+        />
+      </div>
+    </div>
   </section>
 </div>
