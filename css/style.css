@@ -711,8 +711,10 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   border-radius: 9999px;
-  -webkit-transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  -webkit-transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-transition-duration: 150ms;
@@ -748,6 +750,21 @@ body {
 .link-address {
   display: inline-block;
   width: 100%;
+  -webkit-transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-duration: 150ms;
+          transition-duration: 150ms;
+  -webkit-transition-duration: var(--duration);
+          transition-duration: var(--duration);
+}
+
+.link-address:hover {
+  --tw-text-opacity: 1;
+  color: rgb(208 98 209 / var(--tw-text-opacity));
 }
 
 .custom-btn {
@@ -789,6 +806,25 @@ body {
 .custom-btn:focus {
   background-color: var(--btn-primary-hover-bg-color);
   color: var(--btn-primary-hover-text-color);
+}
+
+.error {
+  margin-top: 4px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 16px;
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
+.required {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
+.book-form__mobile {
+  display: none;
 }
 
 .fixed {
@@ -856,10 +892,6 @@ body {
   margin-bottom: 8px;
 }
 
-.ml-\[24px\] {
-  margin-left: 24px;
-}
-
 .mr-\[10px\] {
   margin-right: 10px;
 }
@@ -894,12 +926,14 @@ body {
   display: flex;
 }
 
-.hidden {
-  display: none;
+.inline-flex {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
-.h-2 {
-  height: 0.5rem;
+.hidden {
+  display: none;
 }
 
 .h-\[100px\] {
@@ -1018,10 +1052,6 @@ body {
   -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
       -ms-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
           transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.list-outside {
-  list-style-position: outside;
 }
 
 .flex-row-reverse {
@@ -1238,6 +1268,10 @@ body {
   font-size: 12px;
 }
 
+.text-\[16px\] {
+  font-size: 16px;
+}
+
 .text-\[20px\] {
   font-size: 20px;
 }
@@ -1328,6 +1362,17 @@ body {
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+.transition {
+  -webkit-transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-duration: 150ms;
+          transition-duration: 150ms;
+}
+
 .transition-colors {
   -webkit-transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
@@ -1352,6 +1397,10 @@ body {
 
 .\[--card-gap\:20px\] {
   --card-gap: 20px;
+}
+
+.\[--card-gap\:24px\] {
+  --card-gap: 24px;
 }
 
 .\[--card-item\:1\] {
@@ -2950,22 +2999,6 @@ input:-webkit-autofill {
   -webkit-text-fill-color: #49564f;
 }
 
-.marker\:text-\[32px\] *::marker {
-  font-size: 32px;
-}
-
-.marker\:text-\[\#d062d1\] *::marker {
-  color: rgb(208 98 209 );
-}
-
-.marker\:text-\[32px\]::marker {
-  font-size: 32px;
-}
-
-.marker\:text-\[\#d062d1\]::marker {
-  color: rgb(208 98 209 );
-}
-
 .placeholder\:text-\[14px\]::-webkit-input-placeholder {
   font-size: 14px;
 }
@@ -3041,6 +3074,11 @@ input:-webkit-autofill {
 
 .hover\:bg-\[--btn-primary-hover-bg-color\]:hover {
   background-color: var(--btn-primary-hover-bg-color);
+}
+
+.hover\:text-\[\#D062D1\]:hover {
+  --tw-text-opacity: 1;
+  color: rgb(208 98 209 / var(--tw-text-opacity));
 }
 
 .hover\:text-\[--btn-primary-hover-text-color\]:hover {
@@ -3220,6 +3258,11 @@ input:-webkit-autofill {
   .md\:px-\[16px\] {
     padding-left: 16px;
     padding-right: 16px;
+  }
+
+  .md\:py-\[10px\] {
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
   .md\:py-\[20px\] {
