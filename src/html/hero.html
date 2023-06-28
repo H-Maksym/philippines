@@ -85,19 +85,21 @@
     >
       <div class="card-set-item">
         <input
-          class="form-input mb-[20px] py-[14px] px-[12px] text-md placeholder:text-[#c7c7c7] placeholder:text-[14px]"
+          class="form-input mb-[20px] md:mb-0 py-[14px] px-[12px] text-md placeholder:text-[#c7c7c7] placeholder:text-[14px]"
           id="name"
           type="text"
           placeholder="Name"
         />
         <label for="name"></label>
       </div>
-      <div class="card-set-item iti-mobile">
+      <div class="card-set-item">
         <input
-          class="form-control form-input mb-[20px] py-[14px] px-[12px] text-md placeholder:text-[#c7c7c7] placeholder:text-[14px]"
+          class="form-input mb-[20px] md:mb-0 py-[14px] px-[12px] text-md placeholder:text-[#c7c7c7] placeholder:text-[14px]"
           id="phone"
           type="tel"
         /><label for="phone"></label>
+        <span id="valid-msg" class="hide">✓ Valid</span>
+        <span id="error-msg" class="hide"></span>
       </div>
       <div class="card-set-item">
         <input
