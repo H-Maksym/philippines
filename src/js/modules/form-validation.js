@@ -1,5 +1,3 @@
-import { formRegInputName } from '../nodes/index.js';
-
 export function showError(input, message) {
   const formControl = input.parentElement;
   const errorElement = formControl.querySelector('.error-message');
@@ -14,26 +12,32 @@ export function showSuccess(input) {
   errorElement.classList.remove('error');
 }
 
-export const formRegInputNameValidation = () => {
-  const nameValue = formRegInputName.value.trim();
-  if (nameValue === '') {
-    showError(formRegInputName, 'Name is required');
-    return;
-  } else {
-    showSuccess(formRegInputName);
+export function formRegInputNameValidation(InputName) {
+  const nameValue = InputName.value.trim();
+  if (nameValue) {
+    showError(InputName, 'Name is required');
+    if (nameValue.length < 3) {
+      showError(InputName, 'Enter at least 3 characters');
+      return;
+    }
   }
-  if (nameValue.length < 3) {
-    showError(formRegInputName, 'Enter at least 3 characters');
-    return;
-  } else {
-    showSuccess(formRegInputName);
-  }
-};
+  showSuccess(InputName);
+}
 
-export const formRegInputEmailValidation = () => {};
+export function formRegInputEmailValidation(InputEmail) {
+  const mailValue = InputEmail.value.trim();
+
+  if (mailValue) {
+    showError(InputEmail, 'Email is required');
+    if (!isValidEmail(mailValue)) {
+      showError(InputEmail, 'Invalid email address');
+      return;
+    }
+  }
+  showSuccess(InputEmail);
+}
 
 export function isValidEmail(email) {
-  // Regular expression for email validation
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email);
 }

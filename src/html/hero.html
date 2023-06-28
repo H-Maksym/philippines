@@ -80,36 +80,44 @@
       </p>
     </div>
     <form
-      action=""
+      id="form-booking"
       class="mt-[24px] lg:mt-[36px] card-set [--card-gap:20px] [--card-item:1] md:[--card-item:3] md:[--card-gap:28px] lg:[--card-gap:44px]"
     >
       <div class="card-set-item">
         <input
           class="form-input mb-[20px] md:mb-0 py-[14px] px-[12px] text-md placeholder:text-[#c7c7c7] placeholder:text-[14px]"
-          id="name"
+          id="frBook-name"
+          name="name"
           type="text"
           placeholder="Name"
+          required
         />
-        <label for="name"></label>
+        <label for="frBook-name"></label>
+        <span id="frBook-name-error" class="error-message"></span>
       </div>
       <div class="card-set-item">
         <input
           class="form-input mb-[20px] md:mb-0 py-[14px] px-[12px] text-md placeholder:text-[#c7c7c7] placeholder:text-[14px]"
-          id="phone"
+          id="frBook-phone"
+          name="phone"
+          required
           type="tel"
           required
           data-phone="phone"
-        /><label for="phone"></label>
-        <!-- <span id="valid-msg" class="hide">✓ Valid</span> -->
-        <!-- <span id="phone-error" class="hide"></span> -->
+          data-fr="frBook"
+        /><label for="frBook-phone"></label>
+        <span id="frBook-phone-error" class="error-message"></span>
       </div>
       <div class="card-set-item">
         <input
           class="form-input py-[14px] px-[12px] text-md placeholder:text-[#c7c7c7] placeholder:text-[14px]"
-          id="email"
+          id="frBook-email"
+          name="email"
           type="email"
           placeholder="time@gmail.com"
-        /><label for="email"></label>
+          required
+        /><label for="frBook-email"></label>
+        <span id="frBook-email-error" class="error-message"></span>
       </div>
     </form>
   </section>

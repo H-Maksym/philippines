@@ -1,6 +1,10 @@
 import intlTelInput from 'intl-tel-input';
 import 'intl-tel-input/build/js/utils.js';
-import { formRegInputPhoneError } from '../nodes/index.js';
+import {
+  formBookingInputPhoneError,
+  formRegInputPhoneError,
+} from '../nodes/index.js';
+import { showError, showSuccess } from '../modules/form-validation.js';
 
 const inputs = document.querySelectorAll('[data-phone="phone"]');
 // here, the index maps to the error code returned from getValidationError - see readme
@@ -26,36 +30,45 @@ export const itiInit = (intlTelInput, input, intlConfig) => {
   return intlTelInput(input, intlConfig);
 };
 
-export const initializePhoneInput = () => {
+export function getErrorStatus(inputValue, nodeError, iti) {
+  if (inputValue) {
+    if (!iti.isValidNumber()) {
+      const errorCode = iti.getValidationError();
+      if (errorCode === -99) {
+        showError(nodeError, 'Invalid number. Please, enter only numbers.');
+      } else {
+        showError(nodeError, errorMap[errorCode]);
+      }
+    }
+  } else {
+    showSuccess(nodeError);
+  }
+}
+
+export function initializePhoneInput() {
   inputs.forEach(input => {
     const iti = itiInit(intlTelInput, input, intlConfig);
+
+    const resetFRBook = () => {
+      input.classList.remove('error');
+      formBookingInputPhoneError.innerHTML = '';
+    };
 
     const resetFR = () => {
       input.classList.remove('error');
       formRegInputPhoneError.innerHTML = '';
-      formRegInputPhoneError.classList.add('hide');
     };
 
     input.addEventListener('blur', () => {
-      if (input.dataset.fr) {
-        resetFR();
-        if (input.value.trim()) {
-          if (!iti.isValidNumber()) {
-            /*         input.classList.add('error'); */
-            const errorCode = iti.getValidationError();
-            if (errorCode === -99) {
-              formRegInputPhoneError.innerHTML =
-                'Invalid number. Please, enter only numbers.';
-            } else {
-              formRegInputPhoneError.innerHTML = errorMap[errorCode];
-            }
+      const inputValue = input.value.trim();
 
-            formRegInputPhoneError.classList.remove('hidden');
-          }
-        } else {
-          formRegInputPhoneError.classList.add('hidden');
-        }
+      if (input.dataset.fr === 'frBook') {
+        resetFRBook();
+        getErrorStatus(inputValue, formBookingInputPhoneError, iti);
+      } else if (input.dataset.fr === 'fr') {
+        resetFR();
+        getErrorStatus(inputValue, formRegInputPhoneError, iti);
       }
     });
   });
-};
+}
