@@ -12,29 +12,31 @@ export function showSuccess(input) {
   errorElement.classList.remove('error');
 }
 
-export function formRegInputNameValidation(InputName) {
+export function formInputNameValidation(InputName) {
   const nameValue = InputName.value.trim();
   if (nameValue) {
     showError(InputName, 'Name is required');
     if (nameValue.length < 3) {
       showError(InputName, 'Enter at least 3 characters');
-      return;
+      return 'isInvalid';
     }
   }
   showSuccess(InputName);
+  return 'isValid';
 }
 
-export function formRegInputEmailValidation(InputEmail) {
+export function formInputEmailValidation(InputEmail) {
   const mailValue = InputEmail.value.trim();
 
   if (mailValue) {
     showError(InputEmail, 'Email is required');
     if (!isValidEmail(mailValue)) {
       showError(InputEmail, 'Invalid email address');
-      return;
+      return false;
     }
   }
   showSuccess(InputEmail);
+  return true;
 }
 
 export function isValidEmail(email) {

@@ -7,35 +7,39 @@ import {
   formBookingInputEmail,
   formRegInputName,
   formRegInputEmail,
+  btnOpenForm,
 } from './nodes/index.js';
 import {
+  openFormForMobile,
   formRegistrationSubmit,
   formBookingSubmit,
 } from './modules/form-submit.js';
 
 import {
-  formRegInputNameValidation,
-  formRegInputEmailValidation,
+  formInputNameValidation,
+  formInputEmailValidation,
 } from './modules/form-validation.js';
 
 //#events for booking form
+
+btnOpenForm.addEventListener('click', openFormForMobile);
 formBooking.addEventListener('submit', formBookingSubmit);
 
 formBookingInputName.addEventListener('blur', () =>
-  formRegInputNameValidation(formBookingInputName)
+  formInputNameValidation(formBookingInputName)
 );
 formBookingInputEmail.addEventListener('blur', () =>
-  formRegInputEmailValidation(formBookingInputEmail)
+  formInputEmailValidation(formBookingInputEmail)
 );
 
 //#events for registration form
-formRegistration.addEventListener('submit', formRegistrationSubmit);
+formRegistration.addEventListener('submit', e => formRegistrationSubmit(e));
 
 formRegInputName.addEventListener('blur', () =>
-  formRegInputNameValidation(formRegInputName)
+  formInputNameValidation(formRegInputName)
 );
 formRegInputEmail.addEventListener('blur', () =>
-  formRegInputEmailValidation(formRegInputEmail)
+  formInputEmailValidation(formRegInputEmail)
 );
 
 initializePhoneInput();

@@ -1,4 +1,5 @@
 import intlTelInput from 'intl-tel-input';
+
 import 'intl-tel-input/build/js/utils.js';
 import {
   formBookingInputPhoneError,
@@ -17,7 +18,7 @@ const errorMap = [
   'Invalid number. Please, enter only numbers.',
 ];
 
-const intlConfig = {
+export const intlConfig = {
   hiddenInput: 'full_phone',
   initialCountry: 'ua',
   preferredCountries: ['ua', 'us', 'gb', 'ca'],
@@ -39,10 +40,11 @@ export function getErrorStatus(inputValue, nodeError, iti) {
       } else {
         showError(nodeError, errorMap[errorCode]);
       }
+      return false;
     }
-  } else {
-    showSuccess(nodeError);
   }
+  showSuccess(nodeError);
+  return true;
 }
 
 export function initializePhoneInput() {

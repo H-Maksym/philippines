@@ -69,4 +69,8 @@
   .required {
     @apply text-red-500;
   }
+
+  .book-form__mobile {
+    @apply hidden;
+  }
 }

@@ -1,5 +1,9 @@
 //INFO book form
 export const formBooking = document.querySelector('#form-booking');
+export const formBookingWrapper = document.querySelector(
+  '#form-booking-wrapper'
+);
+
 export const formBookingInputName = document.querySelector('#frBook-name');
 export const formBookingInputNameError =
   document.querySelector('#frBook-name-error');
@@ -7,10 +11,14 @@ export const formBookingInputPhone = document.querySelector('#frBook-phone');
 export const formBookingInputPhoneError = document.querySelector(
   '#frBook-phone-error'
 );
+
 export const formBookingInputEmail = document.querySelector('#frBook-email');
 export const formBookingInputEmailError = document.querySelector(
   '#frBook-email-error'
 );
+
+export const btnBooking = document.querySelector('#btn-frBook');
+export const btnOpenForm = document.querySelector('#btn-open');
 
 //INFO registration form
 export const formRegistration = document.querySelector('#form-registration');
