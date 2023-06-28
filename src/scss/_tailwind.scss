@@ -63,4 +63,10 @@
     hover:bg-[--btn-primary-hover-bg-color] hover:text-[--btn-primary-hover-text-color] 
     focus:bg-[--btn-primary-hover-bg-color] focus:text-[--btn-primary-hover-text-color];
   }
+  .error {
+    @apply inline-flex mt-[4px] text-[16px] text-red-500;
+  }
+  .required {
+    @apply text-red-500;
+  }
 }

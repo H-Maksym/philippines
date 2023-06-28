@@ -1,9 +1,20 @@
 import { isWebp } from './modules/functions.js';
-import { initialize } from './intl/initialize.js';
-import { handleSubmit } from './modules/form_registration.js';
+import { initializePhoneInput } from './intl/initialize.js';
+import {
+  formRegistration,
+  formRegInputName,
+  formRegInputEmail,
+} from './nodes/index.js';
+import { formRegistrationSubmit } from './modules/form-registration.js';
 
-// const form_registration = document.querySelector('#form_registration');
-// form_registration.addEventListener('submit', handleSubmit);
+import {
+  formRegInputNameValidation,
+  formRegInputEmailValidation,
+} from './modules/form-validation.js';
+formRegistration.addEventListener('submit', formRegistrationSubmit);
 
-initialize();
+formRegInputName.addEventListener('blur', formRegInputNameValidation);
+formRegInputEmail.addEventListener('blur', formRegInputEmailValidation);
+
+initializePhoneInput();
 isWebp();

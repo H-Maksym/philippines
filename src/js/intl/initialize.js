@@ -1,69 +1,59 @@
 import intlTelInput from 'intl-tel-input';
 import 'intl-tel-input/build/js/utils.js';
+import { formRegInputPhoneError } from '../nodes/index.js';
 
-const inputs = document.querySelectorAll('#phone');
-const errorMsg = document.querySelector('#error-msg');
-const validMsg = document.querySelector('#valid-msg');
+const inputs = document.querySelectorAll('[data-phone="phone"]');
 // here, the index maps to the error code returned from getValidationError - see readme
+
 const errorMap = [
-  'Invalid number',
+  'Invalid number. Please, enter only numbers.',
   'Invalid country code',
   'Too short',
   'Too long',
-  'Invalid number',
+  'Invalid number. Please, enter only numbers.',
 ];
 
-export const initialize = () => {
-  inputs.forEach(input => {
-    const iti = intlTelInput(input, {
-      hiddenInput: 'full_phone',
-      initialCountry: 'ua',
-      preferredCountries: ['ua', 'us', 'gb', 'ca'],
-      //INFO shown dial-code
-      // separateDialCode: true,
-      autoInsertDialCode: true,
-      formatOnDisplay: true,
-    });
+const intlConfig = {
+  hiddenInput: 'full_phone',
+  initialCountry: 'ua',
+  preferredCountries: ['ua', 'us', 'gb', 'ca'],
+  //INFO shown dial-code
+  // separateDialCode: true,
+  autoInsertDialCode: true,
+  formatOnDisplay: true,
+};
+export const itiInit = (intlTelInput, input, intlConfig) => {
+  return intlTelInput(input, intlConfig);
+};
 
-    const reset = () => {
+export const initializePhoneInput = () => {
+  inputs.forEach(input => {
+    const iti = itiInit(intlTelInput, input, intlConfig);
+
+    const resetFR = () => {
       input.classList.remove('error');
-      errorMsg.innerHTML = '';
-      errorMsg.classList.add('hide');
-      validMsg.classList.add('hide');
+      formRegInputPhoneError.innerHTML = '';
+      formRegInputPhoneError.classList.add('hide');
     };
 
-    input.addEventListener('input', () => {
-      const currentNumber = input.value;
-      const isValid = iti.isValidNumber();
-      const formattedNumber = isValid ? iti.getNumber() : currentNumber;
-      const countryCode = iti.getSelectedCountryData().iso2;
-      const countryData = window.intlTelInputGlobals.getCountryData();
-      const countryInfo = countryData.find(c => c.iso2 === countryCode);
-      const maxDigits = countryInfo ? countryInfo.maxLen : null;
-
-      if (currentNumber.length > maxDigits) {
-        input.value = currentNumber.slice(0, maxDigits);
-      }
-
-      if (currentNumber.length >= maxDigits) {
-        input.disabled = true;
-      } else {
-        input.disabled = false;
-      }
-
-      input.value = formattedNumber;
-    });
-
     input.addEventListener('blur', () => {
-      reset();
-      if (input.value.trim()) {
-        if (iti.isValidNumber()) {
-          validMsg.classList.remove('hide');
+      if (input.dataset.fr) {
+        resetFR();
+        if (input.value.trim()) {
+          if (!iti.isValidNumber()) {
+            /*         input.classList.add('error'); */
+            const errorCode = iti.getValidationError();
+            if (errorCode === -99) {
+              formRegInputPhoneError.innerHTML =
+                'Invalid number. Please, enter only numbers.';
+            } else {
+              formRegInputPhoneError.innerHTML = errorMap[errorCode];
+            }
+
+            formRegInputPhoneError.classList.remove('hidden');
+          }
         } else {
-          input.classList.add('error');
-          const errorCode = iti.getValidationError();
-          errorMsg.innerHTML = errorMap[errorCode];
-          errorMsg.classList.remove('hide');
+          formRegInputPhoneError.classList.add('hidden');
         }
       }
     });

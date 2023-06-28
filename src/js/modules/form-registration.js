@@ -1,6 +1,6 @@
 import { isValidEmail, showError, showSuccess } from './form-validation.js';
 
-export function handleSubmit(event) {
+export function formRegistrationSubmit(event) {
   event.preventDefault();
 
   const {
