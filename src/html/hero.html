@@ -14,7 +14,6 @@
         </p>
         <div class="md:flex md:gap-[20px]">
           <div>
-            <!--list-disc list-outside marker:text-[#d062d1]  marker:text-[32px] ml-[24px]  -->
             <ul class="card-set [--card-gap:16px] lg:[--card-gap:32px]">
               <li class="flex card-set-item">
                 <span class="list-item-style"> </span>
@@ -48,16 +47,16 @@
             class="sm:hidden md:flex md:items-center lg:absolute lg:bottom-[-40px] lg:right-0"
           >
             <div
-              aria-label="girl with notebook"
+              aria-description="girl with notebook"
               class="relative bg-[#d062d1] rounded-full w-[274px] h-[274px] bg-[url('../assets/hero/girls.png')] bg-no-repeat bg-contain lg:w-[470px] lg:h-[470px]"
             >
               <div data-hero-version="1">
                 <div
-                  aria-label="sale discount"
+                  aria-description="sale discount"
                   class="absolute z-20 top-[-40px] right-[-39px] translate-x-[-100%] w-[79px] h-[79px] bg-[url('../assets/icons/hero/sale-discount.svg')] bg-no-repeat bg-contain lg:top-[-25px] lg:right-[-52px] lg:translate-x-[-100%] lg:w-[114px] lg:h-[114px]"
                 ></div>
                 <div
-                  aria-label="sale duration"
+                  aria-description="sale duration"
                   class="absolute z-10 top-0 right-[-71px] translate-x-[-50%] w-[100px] h-[100px] bg-[url('../assets/icons/hero/sale-duration.svg')] bg-no-repeat bg-contain lg:top-[32px] lg:right-[-99px] lg:translate-x-[-50%] lg:w-[144px] lg:h-[144px]"
                 ></div>
               </div>
@@ -67,47 +66,67 @@
       </div>
     </div>
 
-    <div class="mt-[24px] md:flex md:items-center md:mt-[40px] md:gap-[32px]">
-      <button class="custom-btn mb-[20px] md:max-w-[202px]" type="submit">
-        <span class="md:hidden">Apply now</span
-        ><span class="hidden md:inline-block">Book now</span>
-      </button>
-      <p
-        class="text-[12px] leading-[1.33] md:max-w-[310px] lg:text-[14px] lg:leading-[1.42] lg:max-w-[416px]"
+    <form id="form-booking">
+      <div class="mt-[24px] md:flex md:items-center md:mt-[40px] md:gap-[32px]">
+        <button
+          class="book-form__mobile md:block custom-btn mb-[20px] md:max-w-[202px]"
+          type="submit"
+          id="btn-frBook"
+        >
+          <span class="md:hidden">Apply now</span
+          ><span class="hidden md:inline-block">Book now</span>
+        </button>
+        <button
+          class="md:hidden custom-btn mb-[20px] md:max-w-[202px]"
+          type="button"
+          id="btn-open"
+        >
+          <span class="md:hidden">Apply now</span
+          ><span class="hidden md:inline-block">Book now</span>
+        </button>
+        <p
+          class="text-[12px] leading-[1.33] md:max-w-[310px] lg:text-[14px] lg:leading-[1.42] lg:max-w-[416px]"
+        >
+          Fill out the form below, and we will give and freeze a personal
+          discount with personal consultation
+        </p>
+      </div>
+      <div
+        id="form-booking-wrapper"
+        class="book-form__mobile md:flex mt-[24px] lg:mt-[36px] card-set [--card-gap:20px] [--card-item:1] md:[--card-item:3] md:[--card-gap:28px] lg:[--card-gap:44px]"
       >
-        Fill out the form below, and we will give and freeze a personal discount
-        with personal consultation
-      </p>
-    </div>
-    <form
-      action=""
-      class="mt-[24px] lg:mt-[36px] card-set [--card-gap:20px] [--card-item:1] md:[--card-item:3] md:[--card-gap:28px] lg:[--card-gap:44px]"
-    >
-      <div class="card-set-item">
-        <input
-          class="form-input mb-[20px] md:mb-0 py-[14px] px-[12px] text-md placeholder:text-[#c7c7c7] placeholder:text-[14px]"
-          id="name"
-          type="text"
-          placeholder="Name"
-        />
-        <label for="name"></label>
-      </div>
-      <div class="card-set-item">
-        <input
-          class="form-input mb-[20px] md:mb-0 py-[14px] px-[12px] text-md placeholder:text-[#c7c7c7] placeholder:text-[14px]"
-          id="phone"
-          type="tel"
-        /><label for="phone"></label>
-        <span id="valid-msg" class="hide">✓ Valid</span>
-        <span id="error-msg" class="hide"></span>
-      </div>
-      <div class="card-set-item">
-        <input
-          class="form-input py-[14px] px-[12px] text-md placeholder:text-[#c7c7c7] placeholder:text-[14px]"
-          id="email"
-          type="email"
-          placeholder="time@gmail.com"
-        /><label for="email"></label>
+        <div class="card-set-item">
+          <input
+            class="form-input md:mb-0 py-[14px] px-[12px] text-md placeholder:text-[#c7c7c7] placeholder:text-[14px]"
+            id="frBook-name"
+            name="name"
+            type="text"
+            placeholder="Name"
+          />
+          <label for="frBook-name"></label>
+          <span id="frBook-name-error" class="error-message"></span>
+        </div>
+        <div class="card-set-item">
+          <input
+            class="form-input mb-[20px] md:mb-0 py-[14px] px-[12px] text-md placeholder:text-[#c7c7c7] placeholder:text-[14px]"
+            id="frBook-phone"
+            name="phone"
+            type="tel"
+            data-phone="phone"
+            data-fr="frBook"
+          /><label for="frBook-phone"></label>
+          <span id="frBook-phone-error" class="error-message"></span>
+        </div>
+        <div class="card-set-item">
+          <input
+            class="form-input py-[14px] px-[12px] text-md placeholder:text-[#c7c7c7] placeholder:text-[14px]"
+            id="frBook-email"
+            name="email"
+            type="email"
+            placeholder="time@gmail.com"
+          /><label for="frBook-email"></label>
+          <span id="frBook-email-error" class="error-message"></span>
+        </div>
       </div>
     </form>
   </section>

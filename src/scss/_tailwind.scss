@@ -41,7 +41,7 @@
   }
 
   .social-link {
-    @apply flex items-center justify-center w-[40px] h-[40px] rounded-full hover:scale-[1.1] duration-[--duration] transition-colors;
+    @apply flex items-center justify-center w-[40px] h-[40px] rounded-full hover:scale-[1.1] duration-[--duration] transition;
   }
 
   .social-icon {
@@ -53,7 +53,7 @@
   }
 
   .link-address {
-    @apply inline-block w-full;
+    @apply inline-block w-full hover:text-[#D062D1] duration-[--duration] transition;
   }
 
   .custom-btn {
@@ -62,5 +62,15 @@
     text-[--btn-primary-text-color] bg-[--btn-primary-bg-color] 
     hover:bg-[--btn-primary-hover-bg-color] hover:text-[--btn-primary-hover-text-color] 
     focus:bg-[--btn-primary-hover-bg-color] focus:text-[--btn-primary-hover-text-color];
+  }
+  .error {
+    @apply inline-flex mt-[4px] text-[16px] text-red-500;
+  }
+  .required {
+    @apply text-red-500;
+  }
+
+  .book-form__mobile {
+    @apply hidden;
   }
 }
