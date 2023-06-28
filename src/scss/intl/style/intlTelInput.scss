@@ -22,15 +22,12 @@
   padding-right: 36px;
   margin-right: 0;
 }
-//INFO with position relative dropdown - full width input
 .iti__flag-container {
   position: absolute;
-  // position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
   padding: 1px;
-  background-color: #ffffff;
 }
 .iti__selected-flag {
   z-index: 1;
@@ -39,9 +36,7 @@
   align-items: center;
   height: 100%;
   padding: 0 6px 0 8px;
-  border: 1px solid inherit;
   border-radius: 8px;
-  outline: none;
 }
 .iti__arrow {
   margin-left: 6px;
@@ -49,7 +44,7 @@
   height: 0;
   border-left: 3px solid transparent;
   border-right: 3px solid transparent;
-  border-top: 4px solid #010101;
+  border-top: 4px solid #555;
 }
 [dir='rtl'] .iti__arrow {
   margin-right: 6px;
@@ -57,11 +52,10 @@
 }
 .iti__arrow--up {
   border-top: none;
-  border-bottom: 4px solid #010101;
+  border-bottom: 4px solid #555;
 }
 .iti__country-list {
-  position: relative;
-  // position: absolute;
+  position: absolute;
   z-index: 2;
   list-style: none;
   padding: 0;
@@ -69,21 +63,22 @@
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
   background-color: white;
   border: 1px solid #ccc;
+  border-radius: 8px;
   white-space: nowrap;
-  max-height: 120px;
-
+  max-height: 200px;
+  max-width: 220px;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+  white-space: normal;
 }
 .iti__country-list--dropup {
   bottom: 100%;
   margin-bottom: -1px;
 }
-@media (max-width: 767px) {
-  .iti__country-list {
-    white-space: normal;
-  }
-}
+// @media (max-width: 500px) {
+//   .iti__country-list {
+//   }
+// }
 .iti__flag-box {
   display: inline-block;
   width: 20px;
@@ -100,10 +95,9 @@
   outline: none;
 }
 .iti__dial-code {
-  color: #999;
+  color: #fff;
 }
 .iti__country.iti__highlight {
-  // background-color: rgba(0, 0, 0, 0.05);
   background-color: #d062d1;
 }
 .iti__flag-box,
@@ -149,7 +143,7 @@
   cursor: pointer;
 }
 .iti--allow-dropdown .iti__flag-container:hover .iti__selected-flag {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: #ffffff;
 }
 .iti--allow-dropdown input[disabled] + .iti__flag-container:hover,
 .iti--allow-dropdown input[readonly] + .iti__flag-container:hover {
@@ -166,15 +160,15 @@
   background-color: transparent;
 }
 .iti--separate-dial-code .iti__selected-flag {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: #ffffff;
 }
 .iti--separate-dial-code.iti--show-flags .iti__selected-dial-code {
   margin-left: 6px;
 }
 .iti--container {
   position: absolute;
-  // top: -1000px;
-  // left: -1000px;
+  top: -1000px;
+  left: -1000px;
   z-index: 1060;
   padding: 1px;
 }
@@ -190,13 +184,8 @@
   position: fixed;
 }
 .iti-mobile .iti__country-list {
-  max-height: 180px;
-  max-width: 100%;
-  @media (min-width: 768px) {
-    .iti__country-list {
-      white-space: normal;
-    }
-  }
+  max-height: 100%;
+  width: 100%;
 }
 .iti-mobile .iti__country {
   padding: 10px 10px;
@@ -1264,10 +1253,10 @@
 
 .iti__flag {
   height: 15px;
-  box-shadow: 0px 0px 1px 0px #fff;
+  box-shadow: 0px 0px 1px 0px #888;
   background-image: url('../assets/intl/flags.png');
   background-repeat: no-repeat;
-  background-color: #fff;
+  background-color: #dbdbdb;
   background-position: 20px 0;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
