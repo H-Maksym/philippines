@@ -19,6 +19,8 @@ import { svg } from './gulp/tasks/svg.js';
 import { svgsprite } from './gulp/tasks/svgsprite.js';
 import { zip } from './gulp/tasks/zip.js';
 import { ftp } from './gulp/tasks/ftp.js';
+// import { intl } from './gulp/tasks/intl.js';
+
 //INFO transfer the value to the global variable
 global.app = {
   isBuild: process.argv.includes('--build'),
@@ -41,10 +43,13 @@ const watcher = () => {
 //INFO work with fonts
 const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle);
 
+//INFO work with js
+const jsTask = gulp.series(js /* , intl */);
+
 //INFO main task
 const mainTasks = gulp.series(
   fonts,
-  gulp.parallel(copy, html, scss, js, assets, svg)
+  gulp.parallel(copy, html, scss, jsTask, assets, svg)
 );
 
 //INFO construction of task performance scenarios.
