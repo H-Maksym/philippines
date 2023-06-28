@@ -10,6 +10,8 @@ import browserSync from 'browser-sync';
 import newer from 'gulp-newer';
 //INFO checked condition for node.mode
 import ifPlugin from 'gulp-if';
+//INFO concat files
+import concat from 'gulp-concat';
 
 export const plugins = {
   replace,
@@ -18,4 +20,5 @@ export const plugins = {
   browserSync,
   newer,
   if: ifPlugin,
+  concat,
 };

@@ -1,3 +1,31 @@
 @import './fonts';
 @import './utils/variables';
 @import './tailwind.scss';
+@import './intl/style/intlTelInput.scss';
+
+/* scrollbar-color: #6969dd #e0e0e0;
+    scrollbar-width: thin; */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f1f3;
+  border-radius: 8px;
+  margin-block: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d062d1;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  transform: scale(1.1);
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #fcfcfc inset;
+  -webkit-text-fill-color: #49564f;
+}

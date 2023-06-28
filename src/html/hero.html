@@ -1,67 +1,88 @@
 <div
   class="relative z-10 rounded-b-[40px] md:rounded-b-[80px] shadow-[1px_1px_34px_0px_#bcbcbc75]"
 >
-  <section class="container pb-[40px]">
-    <div>
-      <div>
-        <h1 class="mb-[24px] text-4xl leading-[1.125] font-bold">
+  <section class="container pb-[40px] md:pb-[60px] lg:pb-[80 px]">
+    <div class="lg:relative">
+      <div class="lg:w-[60%]">
+        <h1
+          class="mb-[24px] lg:mb-[32px] font-bold text-4xl leading-[1.125] md:text-5xl md:leading-[1] lg:text-6xl"
+        >
           Do you want to become a UX/UI Designer?
         </h1>
-        <p class="list-header mb-[20px]">During the consultation, you’ll:</p>
-        <!--list-disc list-outside marker:text-[#d062d1]  marker:text-[32px] ml-[24px]  -->
-        <ul class="card-set [--card-gap:16px] mb-[24px]">
-          <li class="flex card-set-item">
-            <span class="list-item-style"> </span>
-            <p class="custom-p">
-              Learn more about your strengths and work them to your advantage
-            </p>
-          </li>
-          <li class="flex card-set-item">
-            <span class="list-item-style"> </span>
-            <p class="custom-p">
-              Create your customized plan on how to move toward becoming a UX/UI
-              Designer
-            </p>
-          </li>
-          <li class="flex card-set-item">
-            <span class="list-item-style"> </span>
-            <p class="custom-p">
-              Get to ask all of your questions answered by IT experts
-            </p>
-          </li>
-          <li class="flex card-set-item">
-            <span class="list-item-style"> </span>
-            <p class="custom-p">
-              Gain more confidence and a clear pathway to achieve your goals
-            </p>
-          </li>
-        </ul>
-      </div>
-      <div class="hidden md:block">
-        <img src="@assets/hero/girls.png" alt="girl with notebook" />
-        <img
-          src="@assets/icons/hero/sale-discount.svg"
-          alt="girl with notebook"
-        />
-        <img
-          src="@assets/icons/hero/sale-duration.svg"
-          alt="girl with notebook"
-        />
+        <p class="list-header mb-[20px] lg:mb-[32px]">
+          During the consultation, you’ll:
+        </p>
+        <div class="md:flex md:gap-[20px]">
+          <div>
+            <!--list-disc list-outside marker:text-[#d062d1]  marker:text-[32px] ml-[24px]  -->
+            <ul class="card-set [--card-gap:16px] lg:[--card-gap:32px]">
+              <li class="flex card-set-item">
+                <span class="list-item-style"> </span>
+                <p class="custom-p">
+                  Learn more about your strengths and work them to your
+                  advantage
+                </p>
+              </li>
+              <li class="flex card-set-item">
+                <span class="list-item-style"> </span>
+                <p class="custom-p">
+                  Create your customized plan on how to move toward becoming a
+                  UX/UI Designer
+                </p>
+              </li>
+              <li class="flex card-set-item">
+                <span class="list-item-style"> </span>
+                <p class="custom-p">
+                  Get to ask all of your questions answered by IT experts
+                </p>
+              </li>
+              <li class="flex card-set-item">
+                <span class="list-item-style"> </span>
+                <p class="custom-p">
+                  Gain more confidence and a clear pathway to achieve your goals
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="sm:hidden md:flex md:items-center lg:absolute lg:bottom-[-40px] lg:right-0"
+          >
+            <div
+              aria-label="girl with notebook"
+              class="relative bg-[#d062d1] rounded-full w-[274px] h-[274px] bg-[url('../assets/hero/girls.png')] bg-no-repeat bg-contain lg:w-[470px] lg:h-[470px]"
+            >
+              <div data-hero-version="1">
+                <div
+                  aria-label="sale discount"
+                  class="absolute z-20 top-[-40px] right-[-39px] translate-x-[-100%] w-[79px] h-[79px] bg-[url('../assets/icons/hero/sale-discount.svg')] bg-no-repeat bg-contain lg:top-[-25px] lg:right-[-52px] lg:translate-x-[-100%] lg:w-[114px] lg:h-[114px]"
+                ></div>
+                <div
+                  aria-label="sale duration"
+                  class="absolute z-10 top-0 right-[-71px] translate-x-[-50%] w-[100px] h-[100px] bg-[url('../assets/icons/hero/sale-duration.svg')] bg-no-repeat bg-contain lg:top-[32px] lg:right-[-99px] lg:translate-x-[-50%] lg:w-[144px] lg:h-[144px]"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="md:flex gap-[32px]">
-      <button class="custom-btn mb-[20px]" type="submit">
+
+    <div class="mt-[24px] md:flex md:items-center md:mt-[40px] md:gap-[32px]">
+      <button class="custom-btn mb-[20px] md:max-w-[202px]" type="submit">
         <span class="md:hidden">Apply now</span
         ><span class="hidden md:inline-block">Book now</span>
       </button>
       <p
-        class="text-[12px] leading-[1.33] mb-[24px] md:max-w-[310px] lg:max-w-[416px]"
+        class="text-[12px] leading-[1.33] md:max-w-[310px] lg:text-[14px] lg:leading-[1.42] lg:max-w-[416px]"
       >
         Fill out the form below, and we will give and freeze a personal discount
         with personal consultation
       </p>
     </div>
-    <form action="" class="card-set [--card-gap:20px] [--card-item:1]">
+    <form
+      action=""
+      class="mt-[24px] lg:mt-[36px] card-set [--card-gap:20px] [--card-item:1] md:[--card-item:3] md:[--card-gap:28px] lg:[--card-gap:44px]"
+    >
       <div class="card-set-item">
         <input
           class="form-input mb-[20px] py-[14px] px-[12px] text-md placeholder:text-[#c7c7c7] placeholder:text-[14px]"
@@ -71,7 +92,7 @@
         />
         <label for="name"></label>
       </div>
-      <div class="card-set-item">
+      <div class="card-set-item iti-mobile">
         <input
           class="form-control form-input mb-[20px] py-[14px] px-[12px] text-md placeholder:text-[#c7c7c7] placeholder:text-[14px]"
           id="phone"

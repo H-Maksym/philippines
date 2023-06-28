@@ -37,7 +37,7 @@
   }
 
   .custom-p {
-    @apply text-lg leading-[1.5] relative md:text-xl md:leading-[1.55];
+    @apply text-lg leading-[1.5] relative md:text-xl md:leading-[1.55] lg:text-3xl lg:leading-[1.33];
   }
 
   .social-link {
@@ -57,7 +57,7 @@
   }
 
   .custom-btn {
-    @apply flex items-center md:max-w-[202px] justify-center w-full py-[16px] text-[20px] leading-[24px] font-bold  
+    @apply flex items-center  justify-center w-full py-[16px] md:py-[20px] text-[20px] leading-[24px] font-bold  
     rounded-[16px] border border-[--btn-primary-border-color] duration-[--duration] transition-colors 
     text-[--btn-primary-text-color] bg-[--btn-primary-bg-color] 
     hover:bg-[--btn-primary-hover-bg-color] hover:text-[--btn-primary-hover-text-color] 

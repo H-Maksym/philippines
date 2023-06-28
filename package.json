@@ -29,6 +29,7 @@
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
     "gulp-file-include": "^2.3.0",
     "gulp-fonter": "^0.3.0",
     "gulp-fonter-2": "^0.3.0",
@@ -53,6 +54,7 @@
     "gulp-webp-html-nosvg": "^1.1.1",
     "gulp-webpcss": "^1.1.1",
     "gulp-zip": "^5.1.0",
+    "intl-tel-input": "^18.1.7",
     "postcss": "^8.4.24",
     "prettier": "^2.8.8",
     "sass": "^1.63.6",
@@ -61,8 +63,5 @@
     "webp-converter": "2.2.3",
     "webpack": "^5.88.0",
     "webpack-stream": "^7.0.0"
-  },
-  "dependencies": {
-    "intl-tel-input": "^18.1.7"
   }
 }
