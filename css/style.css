@@ -462,7 +462,7 @@ video {
 }
 
 html {
-  font-family: var(--font-family);
+  font-family: Montserrat, system-ui, sans-serif;
 }
 
 body {
@@ -660,6 +660,10 @@ body {
   margin-left: auto;
   padding-right: 20px;
   padding-left: 20px;
+}
+
+.container {
+  width: 480px;
 }
 
 .list-header {
@@ -998,6 +1002,10 @@ body {
 
 .w-\[40px\] {
   width: 40px;
+}
+
+.w-\[480px\] {
+  width: 480px;
 }
 
 .w-\[79px\] {
@@ -3098,6 +3106,10 @@ input:-webkit-autofill {
     max-width: 768px;
     padding-right: 32px;
     padding-left: 32px;
+  }
+
+  .container {
+    width: 100%;
   }
 
   .list-header {
