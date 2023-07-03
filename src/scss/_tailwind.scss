@@ -24,6 +24,10 @@
 }
 
 @layer components {
+  .container {
+    @apply w-[480px] md:w-full;
+  }
+
   .list-header {
     @apply text-2xl leading-[1.4] font-bold md:text-3xl md:leading-[1.33] lg:text-4xl lg:leading-[1.125];
   }
