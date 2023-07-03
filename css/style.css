@@ -1192,9 +1192,6 @@ body {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.no-webp .bg-\[url\(\'\.\.\/assets\/hero\/girls\.png\'\)\]{
-  background-image: url('../assets/hero/girls.png'); }
-
 .bg-\[url\(\'\.\.\/assets\/icons\/hero\/sale-discount\.svg\'\)\] {
   background-image: url('../assets/icons/hero/sale-discount.svg');
 }
@@ -3146,6 +3143,10 @@ input:-webkit-autofill {
     position: relative;
   }
 
+  .md\:left-\[54\%\] {
+    left: 54%;
+  }
+
   .md\:top-\[47\%\] {
     top: 47%;
   }
@@ -3201,8 +3202,16 @@ input:-webkit-autofill {
     height: 22px;
   }
 
+  .md\:h-\[405px\] {
+    height: 405px;
+  }
+
   .md\:w-\[22px\] {
     width: 22px;
+  }
+
+  .md\:min-w-\[566px\] {
+    min-width: 566px;
   }
 
   .md\:max-w-\[202px\] {
@@ -3452,18 +3461,10 @@ input:-webkit-autofill {
     margin-top: 6px;
   }
 
-  .lg\:block {
-    display: block;
-  }
-
   .lg\:flex {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-  }
-
-  .lg\:hidden {
-    display: none;
   }
 
   .lg\:h-\[114px\] {
@@ -3636,8 +3637,6 @@ input:-webkit-autofill {
   .no-webp .iti__flag{
     background-image: url("../assets/intl/flags@2x.png"); }
 }
-
-.webp .bg-\[url\(\'\.\.\/assets\/hero\/girls\.png\'\)\]{ background-image: url(../assets/hero/girls.webp); }
 
 .webp .iti__flag{ background-image: url(../assets/intl/flags.webp); }
 
