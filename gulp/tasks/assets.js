@@ -16,10 +16,14 @@ export const assets = async () => {
       )
     )
     .pipe(app.plugins.newer(app.path.build.assets))
-    .pipe(app.plugins.if(app.isBuild, webp()))
-    .pipe(app.plugins.if(app.isBuild, app.gulp.dest(app.path.build.assets)))
-    .pipe(app.plugins.if(app.isBuild, app.gulp.src(app.path.src.assets)))
-    .pipe(app.plugins.if(app.isBuild, app.plugins.newer(app.path.build.assets)))
+    // .pipe(app.plugins.if(app.isBuild, webp()))
+    .pipe(webp())
+    // .pipe(app.plugins.if(app.isBuild, app.gulp.dest(app.path.build.assets)))
+    .pipe(app.gulp.dest(app.path.build.assets))
+    // .pipe(app.plugins.if(app.isBuild, app.gulp.src(app.path.src.assets)))
+    .pipe(app.gulp.src(app.path.src.assets))
+    // .pipe(app.plugins.if(app.isBuild, app.plugins.newer(app.path.build.assets)))
+    .pipe(app.plugins.newer(app.path.build.assets))
 
     .pipe(
       app.plugins.if(

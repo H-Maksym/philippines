@@ -1,6 +1,6 @@
 import fileInclude from 'gulp-file-include';
 //INFO added webp format
-import webHtmlNoSVG from 'gulp-webp-html-nosvg';
+import webpHtmlNoSVG from 'gulp-webp-html-nosvg';
 //INFO non cashing in browser
 import versionNumber from 'gulp-version-number';
 //INFO minification html
@@ -20,7 +20,7 @@ export const html = () => {
     )
     .pipe(fileInclude('@@'))
     .pipe(app.plugins.replace(/@assets\//g, 'assets/'))
-    .pipe(app.plugins.if(app.isBuild, webHtmlNoSVG()))
+    .pipe(app.plugins.if(app.isBuild, webpHtmlNoSVG()))
     .pipe(
       app.plugins.if(
         app.isBuild,
